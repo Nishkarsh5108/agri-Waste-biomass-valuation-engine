@@ -1,0 +1,326 @@
+(torch_gpu) D:\Coding\Hackathon\samsung\agri-Waste-biomass-valuation-engine\src\satellite_data\ml_stuff>python run_models.py
+======================================================================
+  HARVEST DATE PREDICTION — MODEL RUNNER
+======================================================================
+
+Steps to run: [8, 9, 10, 11]
+
+
+######################################################################
+#  STEP 8: Assemble Training Data
+######################################################################
+Config loaded. Project root: d:\Coding\Hackathon\samsung\agri-Waste-biomass-valuation-engine
+  Raw data: d:\Coding\Hackathon\samsung\agri-Waste-biomass-valuation-engine\data\sattelite_raw  (9 CSV files)
+  Processed: d:\Coding\Hackathon\samsung\agri-Waste-biomass-valuation-engine\data\processed
+  Years: [2022, 2023, 2024, 2025]
+======================================================================
+STEP 8: Assemble Final Training DataFrame
+======================================================================
+Features: 152536 rows, 56 columns
+Labels: 3316 point-years
+Clusters: 3316 point-years
+Static: 829 points
+
+After label merge: 152536 rows
+  Labeled:   135930 rows (89.1%)
+  Assigning district codes...
+    geopandas not available — using lat-based approximate zoning
+
+Rows with valid target (days_to_harvest > 0): 103628 / 152536
+
+Final dataset (labeled only): 135930 rows
+
+==================================================
+CAUSALITY AUDIT
+==================================================
+  [OK] No 'peak_ndvi' column (correctly absent)
+  [OK] No 'days_since_peak' column (correctly absent)
+  [OK] No 'amplitude' column (correctly absent)
+  [OK] No 'cumul_ndvi' column (correctly absent)
+  [OK] Causal feature 'rolling_max_ndvi_30d' present
+  [OK] Causal feature 'days_since_rolling_max_30d' present
+  [OK] Causal feature 'cumul_ndvi_to_t' present
+  [OK] Causal feature 'rolling_amplitude_30d' present
+  [OK] Causal feature 'ndvi_rate' present
+  [OK] Causal feature 'ndvi_accel' present
+
+==================================================
+FINAL DATASET SUMMARY
+==================================================
+Total rows:   135930
+Total columns: 71
+
+Split distribution:
+split
+train    65688
+val      35558
+test     34684
+
+Label confidence distribution:
+label_confidence
+low       118726
+medium     11776
+high        5428
+
+Target (days_to_harvest) statistics:
+  Mean:   91.6 days
+  Median: 90 days
+  Std:    53.3 days
+  Min:    1, Max: 225
+
+Saved -> training_data.csv
+Saved metadata -> dataset_metadata.json
+
+[OK] Step 8 completed in 10.8s
+
+######################################################################
+#  STEP 9: Naive Baseline
+######################################################################
+======================================================================
+STEP 9: Tier 0 — Naive Baseline
+======================================================================
+Loaded: 135930 rows
+  Train point-years: 1428
+  Val point-years:   773
+  Test point-years:  754
+
+Global median harvest DOY (train): 301
+Per-district medians:
+  haryana: DOY 306 (n=538)
+  punjab_north: DOY 296 (n=110)
+  punjab_south: DOY 301 (n=650)
+  up_west: DOY 291 (n=130)
+
+==================================================
+VALIDATION SET RESULTS
+==================================================
+
+  Global Median Baseline:
+    MAE:     15.7 days
+    RMSE:    25.5 days
+    Bias:    -3.6 days
+    ± 3 days: 14.7%
+    ± 5 days: 25.1%
+    ± 7 days: 31.8%
+    ±10 days: 41.9%
+    ±14 days: 65.5%
+
+  Per-District Median Baseline:
+    MAE:     15.4 days
+    RMSE:    25.7 days
+    Bias:    -4.1 days
+    ± 3 days: 16.3%
+    ± 5 days: 25.1%
+    ± 7 days: 37.4%
+    ±10 days: 49.4%
+    ±14 days: 68.3%
+
+==================================================
+TEST SET RESULTS
+==================================================
+
+  Global Median: MAE=17.3, RMSE=26.0
+  District Median: MAE=16.7, RMSE=25.8
+
+Saved -> naive_baseline_results.json
+
+[OK] Step 9 completed in 1.5s
+
+######################################################################
+#  STEP 10: CatBoost Model
+######################################################################
+======================================================================
+STEP 10: Tier 1a — CatBoost Regression
+======================================================================
+Loaded: 135930 rows
+Valid target rows: 103628
+  Train: 50037
+  Val:   27251
+  Test:  26340
+
+Features: 59
+Categorical features (4): ['district_code', 'agro_zone', 'variety_cluster', 'growth_phase']
+
+Training CatBoost...
+Default metric period is 5 because MAE is/are not implemented for GPU
+0:      learn: 45.9029818       test: 45.6471047        best: 45.6471047 (0)    total: 52.5ms   remaining: 8m 44s
+200:    learn: 42.4232618       test: 42.0498881        best: 42.0498881 (200)  total: 5.36s    remaining: 4m 21s
+400:    learn: 39.0860863       test: 38.6218166        best: 38.6218166 (400)  total: 10.7s    remaining: 4m 15s
+600:    learn: 35.9596124       test: 35.3963318        best: 35.3963318 (600)  total: 15.8s    remaining: 4m 6s
+800:    learn: 33.0524312       test: 32.3691355        best: 32.3691355 (800)  total: 21.9s    remaining: 4m 12s
+1000:   learn: 30.3661441       test: 29.5753023        best: 29.5753023 (1000) total: 27.4s    remaining: 4m 5s
+1200:   learn: 27.9095369       test: 27.0212607        best: 27.0212607 (1200) total: 32.6s    remaining: 3m 58s
+1400:   learn: 25.6729745       test: 24.6901949        best: 24.6901949 (1400) total: 37.9s    remaining: 3m 52s
+1600:   learn: 23.6509883       test: 22.5915242        best: 22.5915242 (1600) total: 43.1s    remaining: 3m 46s
+1800:   learn: 21.8458241       test: 20.7281797        best: 20.7281797 (1800) total: 48.3s    remaining: 3m 40s
+2000:   learn: 20.2524682       test: 19.1022302        best: 19.1022302 (2000) total: 53.6s    remaining: 3m 34s
+2200:   learn: 18.8611602       test: 17.6706394        best: 17.6706394 (2200) total: 58.8s    remaining: 3m 28s
+2400:   learn: 17.6578145       test: 16.4339703        best: 16.4339703 (2400) total: 1m 4s    remaining: 3m 22s
+2600:   learn: 16.6362554       test: 15.4109574        best: 15.4109574 (2600) total: 1m 9s    remaining: 3m 16s
+2800:   learn: 15.7677931       test: 14.5520233        best: 14.5520233 (2800) total: 1m 14s   remaining: 3m 11s
+3000:   learn: 15.0516206       test: 13.8355680        best: 13.8355680 (3000) total: 1m 19s   remaining: 3m 6s
+3200:   learn: 14.4758641       test: 13.2595019        best: 13.2595019 (3200) total: 1m 25s   remaining: 3m
+3400:   learn: 14.0102249       test: 12.7984615        best: 12.7984615 (3400) total: 1m 30s   remaining: 2m 55s
+3600:   learn: 13.6403886       test: 12.4466579        best: 12.4466579 (3600) total: 1m 35s   remaining: 2m 49s
+3800:   learn: 13.3449522       test: 12.1756954        best: 12.1756954 (3800) total: 1m 40s   remaining: 2m 44s
+4000:   learn: 13.0998711       test: 11.9677902        best: 11.9677902 (4000) total: 1m 45s   remaining: 2m 38s
+4200:   learn: 12.9004312       test: 11.8150240        best: 11.8150240 (4200) total: 1m 51s   remaining: 2m 33s
+4400:   learn: 12.7093776       test: 11.6877259        best: 11.6877259 (4400) total: 1m 56s   remaining: 2m 27s
+4600:   learn: 12.5442910       test: 11.5980618        best: 11.5980618 (4600) total: 2m 1s    remaining: 2m 22s
+4800:   learn: 12.4003675       test: 11.5295391        best: 11.5295391 (4800) total: 2m 6s    remaining: 2m 17s
+5000:   learn: 12.2778069       test: 11.4751638        best: 11.4751638 (5000) total: 2m 11s   remaining: 2m 11s
+5200:   learn: 12.1667628       test: 11.4350528        best: 11.4350528 (5200) total: 2m 17s   remaining: 2m 6s
+5400:   learn: 12.0643874       test: 11.4029795        best: 11.4029795 (5400) total: 2m 22s   remaining: 2m 1s
+5600:   learn: 11.9562886       test: 11.3751238        best: 11.3751238 (5600) total: 2m 27s   remaining: 1m 55s
+5800:   learn: 11.8301869       test: 11.3498266        best: 11.3498266 (5800) total: 2m 32s   remaining: 1m 50s
+6000:   learn: 11.6936242       test: 11.3246211        best: 11.3246211 (6000) total: 2m 37s   remaining: 1m 44s
+6200:   learn: 11.5682920       test: 11.3034992        best: 11.3034728 (6198) total: 2m 42s   remaining: 1m 39s
+6400:   learn: 11.4651133       test: 11.2887107        best: 11.2887107 (6400) total: 2m 47s   remaining: 1m 34s
+6600:   learn: 11.3823471       test: 11.2824724        best: 11.2822981 (6598) total: 2m 53s   remaining: 1m 29s
+6800:   learn: 11.3088102       test: 11.2808681        best: 11.2801778 (6715) total: 2m 58s   remaining: 1m 23s
+7000:   learn: 11.2310390       test: 11.2825206        best: 11.2801778 (6715) total: 3m 3s    remaining: 1m 18s
+7200:   learn: 11.1519326       test: 11.2791870        best: 11.2791870 (7200) total: 3m 8s    remaining: 1m 13s
+7400:   learn: 11.0590938       test: 11.2701610        best: 11.2701311 (7396) total: 3m 13s   remaining: 1m 8s
+7600:   learn: 10.9702333       test: 11.2614365        best: 11.2612679 (7591) total: 3m 19s   remaining: 1m 2s
+7800:   learn: 10.8846004       test: 11.2539161        best: 11.2536650 (7789) total: 3m 24s   remaining: 57.6s
+8000:   learn: 10.8001429       test: 11.2481698        best: 11.2475666 (7990) total: 3m 29s   remaining: 52.4s
+8200:   learn: 10.7222868       test: 11.2460781        best: 11.2460781 (8200) total: 3m 34s   remaining: 47.1s
+8400:   learn: 10.6474759       test: 11.2439521        best: 11.2432422 (8350) total: 3m 40s   remaining: 42s
+8600:   learn: 10.5686604       test: 11.2427606        best: 11.2417916 (8534) total: 3m 48s   remaining: 37.2s
+8800:   learn: 10.4932150       test: 11.2409155        best: 11.2405783 (8787) total: 3m 56s   remaining: 32.2s
+9000:   learn: 10.4183729       test: 11.2437468        best: 11.2405783 (8787) total: 4m 4s    remaining: 27.1s
+9200:   learn: 10.3502096       test: 11.2470345        best: 11.2405783 (8787) total: 4m 13s   remaining: 22s
+bestTest = 11.24057833
+bestIteration = 8787
+Shrink model to first 8788 iterations.
+
+Model saved -> catboost_harvest.cbm
+
+==================================================
+EVALUATION RESULTS
+==================================================
+
+  Validation Set:
+    MAE:     11.2 days
+    RMSE:    16.5 days
+    Bias:    -1.0 days
+    ± 3 days: 20.1%
+    ± 5 days: 33.1%
+    ± 7 days: 45.1%
+    ±10 days: 59.8%
+    ±14 days: 73.8%
+
+  Test Set:
+    MAE:     13.8 days
+    RMSE:    19.7 days
+    Bias:    -1.9 days
+    ± 3 days: 17.5%
+    ± 5 days: 28.1%
+    ± 7 days: 37.9%
+    ±10 days: 50.9%
+    ±14 days: 64.3%
+
+==================================================
+TOP 20 FEATURE IMPORTANCES
+==================================================
+   18.04  week
+   16.84  doy
+   13.88  elevation_m
+    8.67  slope_deg
+    6.78  aspect_deg
+    6.44  agro_zone
+    5.75  variety_cluster
+    5.41  district_code
+    4.03  rolling_max_ndvi_30d
+    1.56  days_since_sos
+    1.16  month
+    1.15  dry_days_consec
+    0.98  ndvi_rate
+    0.91  rolling_amplitude_30d
+    0.88  gdd_daily
+    0.80  vh_rate
+    0.65  VH
+    0.54  t_min
+    0.53  VV
+    0.52  days_since_rolling_max_30d
+
+Saved feature importance -> catboost_feature_importance.csv
+Saved metrics -> catboost_metrics.json
+
+[OK] Step 10 completed in 262.2s
+
+######################################################################
+#  STEP 11: XGBoost-AFT Model
+######################################################################
+======================================================================
+STEP 11: Tier 1b — XGBoost-AFT Survival Model
+======================================================================
+Loaded: 103628 valid rows
+  Train: 50037, Val: 27251, Test: 26340
+
+Training XGBoost-AFT (GPU)...
+[0]     train-aft-nloglik:14.12873      val-aft-nloglik:14.10485
+[200]   train-aft-nloglik:2.88001       val-aft-nloglik:2.91966
+[219]   train-aft-nloglik:2.87869       val-aft-nloglik:2.91989
+
+Model saved -> xgboost_aft_harvest.json
+
+==================================================
+EVALUATION RESULTS
+==================================================
+
+  Validation:
+    MAE:  12.1 days
+    RMSE: 17.6 days
+    ± 3d:  19.4%
+    ± 5d:  31.3%
+    ± 7d:  42.3%
+    ±10d:  56.4%
+    ±14d:  70.4%
+
+  Test:
+    MAE:  14.7 days
+    RMSE: 21.2 days
+    ± 3d:  17.2%
+    ± 5d:  27.0%
+    ± 7d:  36.5%
+    ±10d:  48.1%
+    ±14d:  61.6%
+
+==================================================
+TOP 20 FEATURES (gain)
+==================================================
+       211.7  doy
+        86.0  week
+        10.8  ndvi_rate
+         5.2  rolling_max_ndvi_30d
+         4.4  vh_rate
+         2.7  agro_zone
+         2.3  district_code
+         2.2  days_since_rolling_max_30d
+         2.2  bsi
+         2.1  ndwi_lag3
+         2.1  ndwi_lag4
+         2.0  growth_phase
+         2.0  days_since_valid_optical
+         1.9  slope_deg
+         1.9  variety_cluster
+         1.9  elevation_m
+         1.8  ndvi_lag1
+         1.7  VH_lag4
+         1.6  aspect_deg
+         1.6  worldcover_class
+
+[OK] Step 11 completed in 9.0s
+
+======================================================================
+  MODEL RUN SUMMARY
+======================================================================
+  [OK] Step  8: Assemble Training Data
+  [OK] Step  9: Naive Baseline
+  [OK] Step 10: CatBoost Model
+  [OK] Step 11: XGBoost-AFT Model
+
+  Total time: 283.5s (4.7 min)
+
+(torch_gpu) D:\Coding\Hackathon\samsung\agri-Waste-biomass-valuation-engine\src\satellite_data\ml_stuff>

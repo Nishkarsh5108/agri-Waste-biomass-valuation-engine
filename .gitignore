@@ -1,0 +1,6 @@
+data/AVBE_4Year_Paddy_Training_Data.csv
+data/sattelite_raw
+data/processed
+docs/READ THIS TODAY BEFORE ANYTHING.md
+
+src/satellite_data/ml_stuff/__pycache__

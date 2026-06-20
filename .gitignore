@@ -4,3 +4,10 @@ data/processed
 docs/READ THIS TODAY BEFORE ANYTHING.md
 
 src/satellite_data/ml_stuff/__pycache__
+models/catboost_feature_importance.csv
+models/catboost_harvest.cbm
+models/catboost_metrics.json
+models/lstm_harvest.pth
+models/wtte_harvest.pth
+models/xgboost_aft_harvest.json
+models/xgboost_aft_metrics.json

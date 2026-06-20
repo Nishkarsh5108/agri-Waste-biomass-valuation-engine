@@ -6,9 +6,9 @@ RAW = r"d:\Coding\Hackathon\samsung\agri-Waste-biomass-valuation-engine\data\sat
 DATA = r"d:\Coding\Hackathon\samsung\agri-Waste-biomass-valuation-engine\data"
 
 print("=" * 60)
-print("SENTINEL-2 (2022)")
+print("SENTINEL-2 (2017)")
 print("=" * 60)
-df = pd.read_csv(os.path.join(RAW, "sentinel2_raw_2022.csv"))
+df = pd.read_csv(os.path.join(RAW, "sentinel2_raw_2017.csv"))
 print(f"Shape: {df.shape}")
 print(f"Columns: {list(df.columns)}")
 print(f"Date range: {df['date'].min()} to {df['date'].max()}")
@@ -26,9 +26,9 @@ print(f"Date range: {df25['date'].min()} to {df25['date'].max()}")
 print(f"Columns: {list(df25.columns)}")
 
 print("\n" + "=" * 60)
-print("SENTINEL-1 (2022)")
+print("SENTINEL-1 (2017)")
 print("=" * 60)
-df1 = pd.read_csv(os.path.join(RAW, "sentinel1_raw_2022.csv"))
+df1 = pd.read_csv(os.path.join(RAW, "sentinel1_raw_2017.csv"))
 print(f"Shape: {df1.shape}")
 print(f"Columns: {list(df1.columns)}")
 print(f"Date range: {df1['date'].min()} to {df1['date'].max()}")
@@ -63,7 +63,7 @@ print(dfp.head(3).to_string())
 
 # Check observations per point for S2
 print("\n" + "=" * 60)
-print("OBSERVATIONS PER POINT (S2 2022)")
+print("OBSERVATIONS PER POINT (S2 2017)")
 print("=" * 60)
 obs = df.groupby("point_id").size()
 print(f"Mean obs/point: {obs.mean():.1f}")
@@ -72,7 +72,7 @@ print(f"Median: {obs.median():.0f}")
 
 # Check observations per point for S1
 print("\n" + "=" * 60)
-print("OBSERVATIONS PER POINT (S1 2022)")
+print("OBSERVATIONS PER POINT (S1 2017)")
 print("=" * 60)
 obs1 = df1.groupby("point_id").size()
 print(f"Mean obs/point: {obs1.mean():.1f}")

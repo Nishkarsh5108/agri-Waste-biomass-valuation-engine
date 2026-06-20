@@ -232,7 +232,7 @@ def run():
     # Summary
     print(f"\nInterpolated grid: {len(combined)} rows")
     print(f"  Points: {combined['point_id'].nunique()}")
-    print(f"  Time steps per point-year: {len(create_regular_grid(2022))}")
+    print(f"  Time steps per point-year: {len(create_regular_grid(YEARS[0]))}")
     print(f"\nNaN summary after interpolation:")
     for col in ALL_SIGNAL_COLS:
         if col in combined.columns:

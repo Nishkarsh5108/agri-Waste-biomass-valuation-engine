@@ -11,3 +11,5 @@ models/lstm_harvest.pth
 models/wtte_harvest.pth
 models/xgboost_aft_harvest.json
 models/xgboost_aft_metrics.json
+src/satellite_data/using_presto
+src/satellite_data/ml_stuff/catboost_info

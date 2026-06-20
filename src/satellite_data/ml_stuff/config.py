@@ -17,8 +17,8 @@ PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
 # --- Years -------------------------------------------------------------------
-YEARS = [2022, 2023, 2024, 2025]
-TRAIN_YEARS = [2022, 2023]
+YEARS = list(range(2017, 2026))
+TRAIN_YEARS = list(range(2017, 2024))
 VAL_YEARS   = [2024]
 TEST_YEARS  = [2025]
 

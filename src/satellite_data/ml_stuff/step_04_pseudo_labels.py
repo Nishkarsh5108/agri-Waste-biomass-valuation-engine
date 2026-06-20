@@ -218,7 +218,7 @@ def run():
     print(f"\nHarvest DOY statistics (detected only):")
     detected = labels_df[labels_df["harvest_doy"].notna()]["harvest_doy"]
     if len(detected) > 0:
-        print(f"  Mean DOY: {detected.mean():.0f} (~ {pd.Timestamp(2022, 1, 1) + pd.Timedelta(days=int(detected.mean()) - 1):%b %d})")
+        print(f"  Mean DOY: {detected.mean():.0f} (~ {pd.Timestamp(2017, 1, 1) + pd.Timedelta(days=int(detected.mean()) - 1):%b %d})")
         print(f"  Std:  {detected.std():.1f} days")
         print(f"  Min:  {detected.min():.0f}, Max: {detected.max():.0f}")
 

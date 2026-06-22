@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9059fd92bd6e1e01d35a3c1b63f7e0fc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9059fd92bd6e1e01d35a3c1b63f7e0fc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9059fd92bd6e1e01d35a3c1b63f7e0fc = L.map(
+                "map_9059fd92bd6e1e01d35a3c1b63f7e0fc",
+                {
+                    center: [30.900965, 75.857277],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8d8e543dc1a2b6da2cfc08ae513f23bf = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8d8e543dc1a2b6da2cfc08ae513f23bf.addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+            var marker_31d414840aee24505b74e91990eea0f7 = L.marker(
+                [30.900965, 75.857277],
+                {
+}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+            var icon_8c21bb828deb91f974eaa3d1666487ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39707b34a3e75b8014d54c1bc6571e38 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c75124036a51ff4d6b12e6041b3b4cdd = $(`<div id="html_c75124036a51ff4d6b12e6041b3b4cdd" style="width: 100.0%; height: 100.0%;">DEPOT</div>`)[0];
+                popup_39707b34a3e75b8014d54c1bc6571e38.setContent(html_c75124036a51ff4d6b12e6041b3b4cdd);
+            
+        
+
+        marker_31d414840aee24505b74e91990eea0f7.bindPopup(popup_39707b34a3e75b8014d54c1bc6571e38)
+        ;
+
+        
+    
+    
+                marker_31d414840aee24505b74e91990eea0f7.setIcon(icon_8c21bb828deb91f974eaa3d1666487ef);
+            
+    
+            var circle_marker_0ca414f73a2d1b9b96fb8769de540bb1 = L.circleMarker(
+                [30.672314, 76.186015],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_b67a2edd86d1a7853a668e58bdcbe5ec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd4cdcc7b860ce4a874975d6ad58479d = $(`<div id="html_dd4cdcc7b860ce4a874975d6ad58479d" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_012_PART2<br><b>Pickup:</b> 700 kg<br><b>Arrival:</b> 487 min<br><b>Waiting:</b> 13 days</div>`)[0];
+                popup_b67a2edd86d1a7853a668e58bdcbe5ec.setContent(html_dd4cdcc7b860ce4a874975d6ad58479d);
+            
+        
+
+        circle_marker_0ca414f73a2d1b9b96fb8769de540bb1.bindPopup(popup_b67a2edd86d1a7853a668e58bdcbe5ec)
+        ;
+
+        
+    
+    
+            var circle_marker_7d780991cd73923881f5989bb8da2323 = L.circleMarker(
+                [30.624561, 76.3205],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_713c415e1b5303bbb2bfc198b5e46f81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_df12b59c55a3c49a0d8466187458e3ed = $(`<div id="html_df12b59c55a3c49a0d8466187458e3ed" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_087<br><b>Pickup:</b> 5400 kg<br><b>Arrival:</b> 600 min<br><b>Waiting:</b> 13 days</div>`)[0];
+                popup_713c415e1b5303bbb2bfc198b5e46f81.setContent(html_df12b59c55a3c49a0d8466187458e3ed);
+            
+        
+
+        circle_marker_7d780991cd73923881f5989bb8da2323.bindPopup(popup_713c415e1b5303bbb2bfc198b5e46f81)
+        ;
+
+        
+    
+    
+            var circle_marker_367ae5666079155f38489b7b8bbace85 = L.circleMarker(
+                [30.604026, 76.300131],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_7dadd853dd8fba814c6133fb3b127f37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8bd6ce3924fa7574a23b17ab0dbbd01a = $(`<div id="html_8bd6ce3924fa7574a23b17ab0dbbd01a" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_020_PART2<br><b>Pickup:</b> 8000 kg<br><b>Arrival:</b> 627 min<br><b>Waiting:</b> 19 days</div>`)[0];
+                popup_7dadd853dd8fba814c6133fb3b127f37.setContent(html_8bd6ce3924fa7574a23b17ab0dbbd01a);
+            
+        
+
+        circle_marker_367ae5666079155f38489b7b8bbace85.bindPopup(popup_7dadd853dd8fba814c6133fb3b127f37)
+        ;
+
+        
+    
+    
+            var circle_marker_a9658f75e231bf4b9e1a14789e99c4d1 = L.circleMarker(
+                [30.439928, 75.975531],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_622ba57e120bc6ddf0b6bacd4abb7b87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9fd411a0010dc0c1b1fae6bd7ae73e8e = $(`<div id="html_9fd411a0010dc0c1b1fae6bd7ae73e8e" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_068_PART2<br><b>Pickup:</b> 100 kg<br><b>Arrival:</b> 734 min<br><b>Waiting:</b> 8 days</div>`)[0];
+                popup_622ba57e120bc6ddf0b6bacd4abb7b87.setContent(html_9fd411a0010dc0c1b1fae6bd7ae73e8e);
+            
+        
+
+        circle_marker_a9658f75e231bf4b9e1a14789e99c4d1.bindPopup(popup_622ba57e120bc6ddf0b6bacd4abb7b87)
+        ;
+
+        
+    
+    
+            var poly_line_e666a51af2e9a0f918fa3c933ade9e7d = L.polyline(
+                [[30.900965, 75.857277], [30.672314, 76.186015], [30.624561, 76.3205], [30.604026, 76.300131], [30.439928, 75.975531], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_043a0ff0d5f3cc9a4b4cafb470af0211 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eae632fcbae4e7f6c4aa537b01cd3a49 = $(`<div id="html_eae632fcbae4e7f6c4aa537b01cd3a49" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #1<br><b>Truck:</b> 1<br><b>Priority:</b> 19.0 Days Max Wait</div>`)[0];
+                popup_043a0ff0d5f3cc9a4b4cafb470af0211.setContent(html_eae632fcbae4e7f6c4aa537b01cd3a49);
+            
+        
+
+        poly_line_e666a51af2e9a0f918fa3c933ade9e7d.bindPopup(popup_043a0ff0d5f3cc9a4b4cafb470af0211)
+        ;
+
+        
+    
+    
+            var circle_marker_b0e075b1db6287e7cae7e45d21fbd81b = L.circleMarker(
+                [31.111628, 75.468168],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_c4606875c0f0e2759bca037eab9fe6cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b4b81e9db74a8092745dea2fa0976622 = $(`<div id="html_b4b81e9db74a8092745dea2fa0976622" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_018_PART2<br><b>Pickup:</b> 3200 kg<br><b>Arrival:</b> 360 min<br><b>Waiting:</b> 19 days</div>`)[0];
+                popup_c4606875c0f0e2759bca037eab9fe6cb.setContent(html_b4b81e9db74a8092745dea2fa0976622);
+            
+        
+
+        circle_marker_b0e075b1db6287e7cae7e45d21fbd81b.bindPopup(popup_c4606875c0f0e2759bca037eab9fe6cb)
+        ;
+
+        
+    
+    
+            var circle_marker_0f9a27fa219120d126f1d6a8043a21b9 = L.circleMarker(
+                [30.742031, 75.470751],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_feea373cb11584f54f26d6810dba003a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7fdc44a4f5c80072eebec367fc5bdc1d = $(`<div id="html_7fdc44a4f5c80072eebec367fc5bdc1d" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_033_PART3<br><b>Pickup:</b> 2700 kg<br><b>Arrival:</b> 480 min<br><b>Waiting:</b> 10 days</div>`)[0];
+                popup_feea373cb11584f54f26d6810dba003a.setContent(html_7fdc44a4f5c80072eebec367fc5bdc1d);
+            
+        
+
+        circle_marker_0f9a27fa219120d126f1d6a8043a21b9.bindPopup(popup_feea373cb11584f54f26d6810dba003a)
+        ;
+
+        
+    
+    
+            var circle_marker_7f96b02b8593c656ff12d8de2b56b1d5 = L.circleMarker(
+                [30.818376, 75.579385],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_2c9e80505990ff99abb6f69ccb08e477 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0c143d3ed281147827c6f89d059dfdb = $(`<div id="html_e0c143d3ed281147827c6f89d059dfdb" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_024<br><b>Pickup:</b> 8600 kg<br><b>Arrival:</b> 532 min<br><b>Waiting:</b> 12 days</div>`)[0];
+                popup_2c9e80505990ff99abb6f69ccb08e477.setContent(html_e0c143d3ed281147827c6f89d059dfdb);
+            
+        
+
+        circle_marker_7f96b02b8593c656ff12d8de2b56b1d5.bindPopup(popup_2c9e80505990ff99abb6f69ccb08e477)
+        ;
+
+        
+    
+    
+            var poly_line_5dae826daf10325bd2c85b1ea99d6bfc = L.polyline(
+                [[30.900965, 75.857277], [31.111628, 75.468168], [30.742031, 75.470751], [30.818376, 75.579385], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_5d7f5ff74fc859ec9e74d0f1fbeb618d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a4ce7879353f2b308081b2068113be3 = $(`<div id="html_4a4ce7879353f2b308081b2068113be3" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #2<br><b>Truck:</b> 5<br><b>Priority:</b> 19.0 Days Max Wait</div>`)[0];
+                popup_5d7f5ff74fc859ec9e74d0f1fbeb618d.setContent(html_4a4ce7879353f2b308081b2068113be3);
+            
+        
+
+        poly_line_5dae826daf10325bd2c85b1ea99d6bfc.bindPopup(popup_5d7f5ff74fc859ec9e74d0f1fbeb618d)
+        ;
+
+        
+    
+    
+            var circle_marker_65635788b9cac1c682935d12a1a3c555 = L.circleMarker(
+                [30.97983, 75.795751],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_134b4d4415594843016a3ecf4e58816f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0f56a00370f85e6fe257a6adbc70ea8 = $(`<div id="html_d0f56a00370f85e6fe257a6adbc70ea8" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_051_PART1<br><b>Pickup:</b> 15000 kg<br><b>Arrival:</b> 360 min<br><b>Waiting:</b> 19 days</div>`)[0];
+                popup_134b4d4415594843016a3ecf4e58816f.setContent(html_d0f56a00370f85e6fe257a6adbc70ea8);
+            
+        
+
+        circle_marker_65635788b9cac1c682935d12a1a3c555.bindPopup(popup_134b4d4415594843016a3ecf4e58816f)
+        ;
+
+        
+    
+    
+            var poly_line_ef27614719f63b05a817b6e1dcecbaf0 = L.polyline(
+                [[30.900965, 75.857277], [30.97983, 75.795751], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_a15fdfe86d1ccd73844569cbc86ad90e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d7191bab9fb5f0685b78708ae28b684e = $(`<div id="html_d7191bab9fb5f0685b78708ae28b684e" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #3<br><b>Truck:</b> 9<br><b>Priority:</b> 19.0 Days Max Wait</div>`)[0];
+                popup_a15fdfe86d1ccd73844569cbc86ad90e.setContent(html_d7191bab9fb5f0685b78708ae28b684e);
+            
+        
+
+        poly_line_ef27614719f63b05a817b6e1dcecbaf0.bindPopup(popup_a15fdfe86d1ccd73844569cbc86ad90e)
+        ;
+
+        
+    
+    
+            var circle_marker_5aef448363d2f8f43f2768fb38ef1d18 = L.circleMarker(
+                [31.038395, 76.083368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_4944f557837f0552120a119fdd554e79 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8cb933a551d02812ee9dfa48a7d0f3c7 = $(`<div id="html_8cb933a551d02812ee9dfa48a7d0f3c7" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_055_PART3<br><b>Pickup:</b> 4300 kg<br><b>Arrival:</b> 480 min<br><b>Waiting:</b> 10 days</div>`)[0];
+                popup_4944f557837f0552120a119fdd554e79.setContent(html_8cb933a551d02812ee9dfa48a7d0f3c7);
+            
+        
+
+        circle_marker_5aef448363d2f8f43f2768fb38ef1d18.bindPopup(popup_4944f557837f0552120a119fdd554e79)
+        ;
+
+        
+    
+    
+            var circle_marker_03613128cac95de200df5b022ef297d1 = L.circleMarker(
+                [31.097702, 75.98622],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_171d2106d1b015d44110f508b640d384 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae968ffab2edd22a6f6f5ee687307da0 = $(`<div id="html_ae968ffab2edd22a6f6f5ee687307da0" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_070_PART3<br><b>Pickup:</b> 1300 kg<br><b>Arrival:</b> 527 min<br><b>Waiting:</b> 4 days</div>`)[0];
+                popup_171d2106d1b015d44110f508b640d384.setContent(html_ae968ffab2edd22a6f6f5ee687307da0);
+            
+        
+
+        circle_marker_03613128cac95de200df5b022ef297d1.bindPopup(popup_171d2106d1b015d44110f508b640d384)
+        ;
+
+        
+    
+    
+            var circle_marker_e824b30151f11e24170bed54136e5d16 = L.circleMarker(
+                [31.058578, 75.925586],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_2b410a7d5259fa7b857bcead1a9d19f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dfa0dc352b01abece7d80347a121b0b2 = $(`<div id="html_dfa0dc352b01abece7d80347a121b0b2" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_040<br><b>Pickup:</b> 7800 kg<br><b>Arrival:</b> 600 min<br><b>Waiting:</b> 19 days</div>`)[0];
+                popup_2b410a7d5259fa7b857bcead1a9d19f4.setContent(html_dfa0dc352b01abece7d80347a121b0b2);
+            
+        
+
+        circle_marker_e824b30151f11e24170bed54136e5d16.bindPopup(popup_2b410a7d5259fa7b857bcead1a9d19f4)
+        ;
+
+        
+    
+    
+            var poly_line_11c4696443bf204d5b2b88f6c5d7a33a = L.polyline(
+                [[30.900965, 75.857277], [31.038395, 76.083368], [31.097702, 75.98622], [31.058578, 75.925586], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_eb0b80106e4c839005c153011ccdb048 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a3e60e6e20cd868c8ac0f4f6bce16b4 = $(`<div id="html_7a3e60e6e20cd868c8ac0f4f6bce16b4" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #4<br><b>Truck:</b> 12<br><b>Priority:</b> 19.0 Days Max Wait</div>`)[0];
+                popup_eb0b80106e4c839005c153011ccdb048.setContent(html_7a3e60e6e20cd868c8ac0f4f6bce16b4);
+            
+        
+
+        poly_line_11c4696443bf204d5b2b88f6c5d7a33a.bindPopup(popup_eb0b80106e4c839005c153011ccdb048)
+        ;
+
+        
+    
+    
+            var circle_marker_6424987f96629026f99da466f42cfbf3 = L.circleMarker(
+                [31.359506, 76.20442],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_04b48fe05145a28296dd74936b0a7476 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a98e183f788462d4617c9b82d6ebef2 = $(`<div id="html_6a98e183f788462d4617c9b82d6ebef2" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_075_PART2<br><b>Pickup:</b> 600 kg<br><b>Arrival:</b> 540 min<br><b>Waiting:</b> 14 days</div>`)[0];
+                popup_04b48fe05145a28296dd74936b0a7476.setContent(html_6a98e183f788462d4617c9b82d6ebef2);
+            
+        
+
+        circle_marker_6424987f96629026f99da466f42cfbf3.bindPopup(popup_04b48fe05145a28296dd74936b0a7476)
+        ;
+
+        
+    
+    
+            var circle_marker_cedef49015d82617f81245a93dedae88 = L.circleMarker(
+                [31.368546, 75.905249],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_8dad2594ef7d68ab918faf2ca1abc567 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7accc2691642a43d0f91a23895601964 = $(`<div id="html_7accc2691642a43d0f91a23895601964" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_071_PART2<br><b>Pickup:</b> 2700 kg<br><b>Arrival:</b> 628 min<br><b>Waiting:</b> 3 days</div>`)[0];
+                popup_8dad2594ef7d68ab918faf2ca1abc567.setContent(html_7accc2691642a43d0f91a23895601964);
+            
+        
+
+        circle_marker_cedef49015d82617f81245a93dedae88.bindPopup(popup_8dad2594ef7d68ab918faf2ca1abc567)
+        ;
+
+        
+    
+    
+            var circle_marker_ccf10ddada9582135d11af54b9b351dd = L.circleMarker(
+                [31.370268, 75.880375],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_48de9608940ba2bf277b4ba81b202374 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b33f74403bb4fce307d5932d27e2a029 = $(`<div id="html_b33f74403bb4fce307d5932d27e2a029" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_089_PART2<br><b>Pickup:</b> 8900 kg<br><b>Arrival:</b> 654 min<br><b>Waiting:</b> 14 days</div>`)[0];
+                popup_48de9608940ba2bf277b4ba81b202374.setContent(html_b33f74403bb4fce307d5932d27e2a029);
+            
+        
+
+        circle_marker_ccf10ddada9582135d11af54b9b351dd.bindPopup(popup_48de9608940ba2bf277b4ba81b202374)
+        ;
+
+        
+    
+    
+            var circle_marker_303102b8f8d081feafc6ebcc83ef5c7a = L.circleMarker(
+                [31.227422, 75.677327],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_4b8ad4694eed2bf3d51611ad16476b42 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b3ed27c298346a164f0b202ce0e559a = $(`<div id="html_8b3ed27c298346a164f0b202ce0e559a" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_074_PART3<br><b>Pickup:</b> 1900 kg<br><b>Arrival:</b> 734 min<br><b>Waiting:</b> 17 days</div>`)[0];
+                popup_4b8ad4694eed2bf3d51611ad16476b42.setContent(html_8b3ed27c298346a164f0b202ce0e559a);
+            
+        
+
+        circle_marker_303102b8f8d081feafc6ebcc83ef5c7a.bindPopup(popup_4b8ad4694eed2bf3d51611ad16476b42)
+        ;
+
+        
+    
+    
+            var poly_line_5a68bf17ccbfd25e1600f2c33fe38f28 = L.polyline(
+                [[30.900965, 75.857277], [31.359506, 76.20442], [31.368546, 75.905249], [31.370268, 75.880375], [31.227422, 75.677327], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_c0cfe47b03f79c5943ce26a17d070660 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dbd775fac2b72201b94b19364b4cb61a = $(`<div id="html_dbd775fac2b72201b94b19364b4cb61a" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #5<br><b>Truck:</b> 2<br><b>Priority:</b> 17.0 Days Max Wait</div>`)[0];
+                popup_c0cfe47b03f79c5943ce26a17d070660.setContent(html_dbd775fac2b72201b94b19364b4cb61a);
+            
+        
+
+        poly_line_5a68bf17ccbfd25e1600f2c33fe38f28.bindPopup(popup_c0cfe47b03f79c5943ce26a17d070660)
+        ;
+
+        
+    
+    
+            var circle_marker_df23188d8b86fa7cf2327d12b62ce16f = L.circleMarker(
+                [31.164329, 76.16419],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_ac6fb5b8022cc0e74495d205cfd0f6f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f99614a46ddbe745e112da5dcaad0f7e = $(`<div id="html_f99614a46ddbe745e112da5dcaad0f7e" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_062_PART2<br><b>Pickup:</b> 400 kg<br><b>Arrival:</b> 420 min<br><b>Waiting:</b> 5 days</div>`)[0];
+                popup_ac6fb5b8022cc0e74495d205cfd0f6f5.setContent(html_f99614a46ddbe745e112da5dcaad0f7e);
+            
+        
+
+        circle_marker_df23188d8b86fa7cf2327d12b62ce16f.bindPopup(popup_ac6fb5b8022cc0e74495d205cfd0f6f5)
+        ;
+
+        
+    
+    
+            var circle_marker_934a680e86c4af44fc42e64949fadb94 = L.circleMarker(
+                [31.267834, 76.195758],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_a17b75ae58e20e7b4724778e72774f30 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20b168d5e759a86ed53454084efbca0f = $(`<div id="html_20b168d5e759a86ed53454084efbca0f" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_080_PART2<br><b>Pickup:</b> 2800 kg<br><b>Arrival:</b> 469 min<br><b>Waiting:</b> 8 days</div>`)[0];
+                popup_a17b75ae58e20e7b4724778e72774f30.setContent(html_20b168d5e759a86ed53454084efbca0f);
+            
+        
+
+        circle_marker_934a680e86c4af44fc42e64949fadb94.bindPopup(popup_a17b75ae58e20e7b4724778e72774f30)
+        ;
+
+        
+    
+    
+            var circle_marker_da2e4b2b2c8bdcf692ad199daca8c5e6 = L.circleMarker(
+                [30.984334, 76.31945],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_f151a43466faa92a875a462d87ab8452 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30be58b1ec52d0b2a36e3443299af538 = $(`<div id="html_30be58b1ec52d0b2a36e3443299af538" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_086_PART2<br><b>Pickup:</b> 1200 kg<br><b>Arrival:</b> 570 min<br><b>Waiting:</b> 17 days</div>`)[0];
+                popup_f151a43466faa92a875a462d87ab8452.setContent(html_30be58b1ec52d0b2a36e3443299af538);
+            
+        
+
+        circle_marker_da2e4b2b2c8bdcf692ad199daca8c5e6.bindPopup(popup_f151a43466faa92a875a462d87ab8452)
+        ;
+
+        
+    
+    
+            var circle_marker_8bae79ae4e7c5d5a99aa79b3944d5757 = L.circleMarker(
+                [30.998865, 76.279151],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_58e662e88e6705b60c14de36aae74b10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44a5a1a66455ab4258c503d291025fc4 = $(`<div id="html_44a5a1a66455ab4258c503d291025fc4" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_011<br><b>Pickup:</b> 7700 kg<br><b>Arrival:</b> 600 min<br><b>Waiting:</b> 8 days</div>`)[0];
+                popup_58e662e88e6705b60c14de36aae74b10.setContent(html_44a5a1a66455ab4258c503d291025fc4);
+            
+        
+
+        circle_marker_8bae79ae4e7c5d5a99aa79b3944d5757.bindPopup(popup_58e662e88e6705b60c14de36aae74b10)
+        ;
+
+        
+    
+    
+            var circle_marker_394196f9af17f789adb4a0c4bd5bf0c8 = L.circleMarker(
+                [30.935311, 76.107188],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_f839964bcca7e30917dceda1b35f2173 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_176062dfbd4158e1e6ff1ce77799ed25 = $(`<div id="html_176062dfbd4158e1e6ff1ce77799ed25" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_099_PART3<br><b>Pickup:</b> 2400 kg<br><b>Arrival:</b> 663 min<br><b>Waiting:</b> 5 days</div>`)[0];
+                popup_f839964bcca7e30917dceda1b35f2173.setContent(html_176062dfbd4158e1e6ff1ce77799ed25);
+            
+        
+
+        circle_marker_394196f9af17f789adb4a0c4bd5bf0c8.bindPopup(popup_f839964bcca7e30917dceda1b35f2173)
+        ;
+
+        
+    
+    
+            var poly_line_4e1a472265c5a0e99075a10ee0548bc1 = L.polyline(
+                [[30.900965, 75.857277], [31.164329, 76.16419], [31.267834, 76.195758], [30.984334, 76.31945], [30.998865, 76.279151], [30.935311, 76.107188], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_08cd855cfaeb305157881525023b157f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ecc0c9962eca6f3054d4b45a296cf111 = $(`<div id="html_ecc0c9962eca6f3054d4b45a296cf111" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #6<br><b>Truck:</b> 6<br><b>Priority:</b> 17.0 Days Max Wait</div>`)[0];
+                popup_08cd855cfaeb305157881525023b157f.setContent(html_ecc0c9962eca6f3054d4b45a296cf111);
+            
+        
+
+        poly_line_4e1a472265c5a0e99075a10ee0548bc1.bindPopup(popup_08cd855cfaeb305157881525023b157f)
+        ;
+
+        
+    
+    
+            var circle_marker_3875f61a2897add2b29eeea9eb0958c4 = L.circleMarker(
+                [30.94361, 75.643818],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_ea3a5920a3a11a204f27fb24f917260d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e56e13986a874be088d8b2e619c69105 = $(`<div id="html_e56e13986a874be088d8b2e619c69105" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_052_PART2<br><b>Pickup:</b> 7700 kg<br><b>Arrival:</b> 540 min<br><b>Waiting:</b> 17 days</div>`)[0];
+                popup_ea3a5920a3a11a204f27fb24f917260d.setContent(html_e56e13986a874be088d8b2e619c69105);
+            
+        
+
+        circle_marker_3875f61a2897add2b29eeea9eb0958c4.bindPopup(popup_ea3a5920a3a11a204f27fb24f917260d)
+        ;
+
+        
+    
+    
+            var circle_marker_9d1b660dd353fb4dc74d76ae4d05eff6 = L.circleMarker(
+                [30.841117, 75.479315],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_df9151052561111d0933432ddb49d1ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_380f884e52cc5c49a429076f2ca27ec4 = $(`<div id="html_380f884e52cc5c49a429076f2ca27ec4" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_008_PART2<br><b>Pickup:</b> 4900 kg<br><b>Arrival:</b> 607 min<br><b>Waiting:</b> 15 days</div>`)[0];
+                popup_df9151052561111d0933432ddb49d1ac.setContent(html_380f884e52cc5c49a429076f2ca27ec4);
+            
+        
+
+        circle_marker_9d1b660dd353fb4dc74d76ae4d05eff6.bindPopup(popup_df9151052561111d0933432ddb49d1ac)
+        ;
+
+        
+    
+    
+            var poly_line_f864bed00c6d546ae736b774cdf9e08f = L.polyline(
+                [[30.900965, 75.857277], [30.94361, 75.643818], [30.841117, 75.479315], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_e6b97664fac2ec166cef2d8e133b0abe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eda10d5453f6c30c79fe33e1759b5e32 = $(`<div id="html_eda10d5453f6c30c79fe33e1759b5e32" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #7<br><b>Truck:</b> 10<br><b>Priority:</b> 17.0 Days Max Wait</div>`)[0];
+                popup_e6b97664fac2ec166cef2d8e133b0abe.setContent(html_eda10d5453f6c30c79fe33e1759b5e32);
+            
+        
+
+        poly_line_f864bed00c6d546ae736b774cdf9e08f.bindPopup(popup_e6b97664fac2ec166cef2d8e133b0abe)
+        ;
+
+        
+    
+    
+            var circle_marker_d5bdd8964ff8f696d637ef2d4c4c1a68 = L.circleMarker(
+                [30.964241, 76.052793],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_32978eb2a21b73e2faaf6920420743c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bcd62cd6e4c04bc69bf203c2b29ec206 = $(`<div id="html_bcd62cd6e4c04bc69bf203c2b29ec206" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_019<br><b>Pickup:</b> 9200 kg<br><b>Arrival:</b> 600 min<br><b>Waiting:</b> 7 days</div>`)[0];
+                popup_32978eb2a21b73e2faaf6920420743c2.setContent(html_bcd62cd6e4c04bc69bf203c2b29ec206);
+            
+        
+
+        circle_marker_d5bdd8964ff8f696d637ef2d4c4c1a68.bindPopup(popup_32978eb2a21b73e2faaf6920420743c2)
+        ;
+
+        
+    
+    
+            var circle_marker_fdb576a6f834ed95421ef459a1ed79f7 = L.circleMarker(
+                [30.771607, 76.170077],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_adda8d6f520e2f51aa4d5edc871d7d06 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1505746930246200f76b55e7ccf57d2 = $(`<div id="html_e1505746930246200f76b55e7ccf57d2" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_082_PART3<br><b>Pickup:</b> 3400 kg<br><b>Arrival:</b> 678 min<br><b>Waiting:</b> 13 days</div>`)[0];
+                popup_adda8d6f520e2f51aa4d5edc871d7d06.setContent(html_e1505746930246200f76b55e7ccf57d2);
+            
+        
+
+        circle_marker_fdb576a6f834ed95421ef459a1ed79f7.bindPopup(popup_adda8d6f520e2f51aa4d5edc871d7d06)
+        ;
+
+        
+    
+    
+            var circle_marker_73f2f461072a9bb0fde1f1856efe1e80 = L.circleMarker(
+                [30.777704, 76.106855],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_6bf762cbdc58693ae66c41bcce2b6c87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da9588d07e1588ebe9bba53720bb9478 = $(`<div id="html_da9588d07e1588ebe9bba53720bb9478" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_097_PART2<br><b>Pickup:</b> 1800 kg<br><b>Arrival:</b> 713 min<br><b>Waiting:</b> 17 days</div>`)[0];
+                popup_6bf762cbdc58693ae66c41bcce2b6c87.setContent(html_da9588d07e1588ebe9bba53720bb9478);
+            
+        
+
+        circle_marker_73f2f461072a9bb0fde1f1856efe1e80.bindPopup(popup_6bf762cbdc58693ae66c41bcce2b6c87)
+        ;
+
+        
+    
+    
+            var poly_line_0794dcbc38b7e456c3bd9eb53fe00149 = L.polyline(
+                [[30.900965, 75.857277], [30.964241, 76.052793], [30.771607, 76.170077], [30.777704, 76.106855], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_d94c02c114e1942a5642fe39290e19b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d05a9698cc4ebb601fdaa18151028bc9 = $(`<div id="html_d05a9698cc4ebb601fdaa18151028bc9" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #8<br><b>Truck:</b> 11<br><b>Priority:</b> 17.0 Days Max Wait</div>`)[0];
+                popup_d94c02c114e1942a5642fe39290e19b9.setContent(html_d05a9698cc4ebb601fdaa18151028bc9);
+            
+        
+
+        poly_line_0794dcbc38b7e456c3bd9eb53fe00149.bindPopup(popup_d94c02c114e1942a5642fe39290e19b9)
+        ;
+
+        
+    
+    
+            var circle_marker_f93fb596239b69985b170d974bfffbc4 = L.circleMarker(
+                [30.869658, 75.772097],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_4be98ab3ca4f30575ced164158c821bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e518b784fe24ba5908104f3b3dd15884 = $(`<div id="html_e518b784fe24ba5908104f3b3dd15884" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_098<br><b>Pickup:</b> 13200 kg<br><b>Arrival:</b> 540 min<br><b>Waiting:</b> 16 days</div>`)[0];
+                popup_4be98ab3ca4f30575ced164158c821bc.setContent(html_e518b784fe24ba5908104f3b3dd15884);
+            
+        
+
+        circle_marker_f93fb596239b69985b170d974bfffbc4.bindPopup(popup_4be98ab3ca4f30575ced164158c821bc)
+        ;
+
+        
+    
+    
+            var poly_line_71a9e3fb805da74e98d4005407be05bb = L.polyline(
+                [[30.900965, 75.857277], [30.869658, 75.772097], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_b380808e2c1be5f6b3ee49c3ac6d2937 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3cd08d2c1fa1c5f0593c7b0280c3a442 = $(`<div id="html_3cd08d2c1fa1c5f0593c7b0280c3a442" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #9<br><b>Truck:</b> 4<br><b>Priority:</b> 16.0 Days Max Wait</div>`)[0];
+                popup_b380808e2c1be5f6b3ee49c3ac6d2937.setContent(html_3cd08d2c1fa1c5f0593c7b0280c3a442);
+            
+        
+
+        poly_line_71a9e3fb805da74e98d4005407be05bb.bindPopup(popup_b380808e2c1be5f6b3ee49c3ac6d2937)
+        ;
+
+        
+    
+    
+            var circle_marker_220d00d7d7216510955131c3529f107a = L.circleMarker(
+                [30.616786, 75.980167],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_6299b173a1f362f404256917d1a5ea98 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f6e6fcc650b9d830ce7153cf4e10bee = $(`<div id="html_8f6e6fcc650b9d830ce7153cf4e10bee" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_054<br><b>Pickup:</b> 7600 kg<br><b>Arrival:</b> 540 min<br><b>Waiting:</b> 13 days</div>`)[0];
+                popup_6299b173a1f362f404256917d1a5ea98.setContent(html_8f6e6fcc650b9d830ce7153cf4e10bee);
+            
+        
+
+        circle_marker_220d00d7d7216510955131c3529f107a.bindPopup(popup_6299b173a1f362f404256917d1a5ea98)
+        ;
+
+        
+    
+    
+            var circle_marker_de02e02067e47636707516df1bc63355 = L.circleMarker(
+                [30.416422, 76.285596],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_dc97ed25811e32f682133b82cb9d3294 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_334095a1b289c7f846030928fc428adf = $(`<div id="html_334095a1b289c7f846030928fc428adf" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_044_PART2<br><b>Pickup:</b> 2800 kg<br><b>Arrival:</b> 648 min<br><b>Waiting:</b> 3 days</div>`)[0];
+                popup_dc97ed25811e32f682133b82cb9d3294.setContent(html_334095a1b289c7f846030928fc428adf);
+            
+        
+
+        circle_marker_de02e02067e47636707516df1bc63355.bindPopup(popup_dc97ed25811e32f682133b82cb9d3294)
+        ;
+
+        
+    
+    
+            var circle_marker_f21bce1c382f58caaadea654d913b57f = L.circleMarker(
+                [30.444366, 76.28192],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_4888763c822cf6e83ec18950753e6530 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d83171715578afc21a01736902b8ba13 = $(`<div id="html_d83171715578afc21a01736902b8ba13" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_088_PART3<br><b>Pickup:</b> 2600 kg<br><b>Arrival:</b> 676 min<br><b>Waiting:</b> 4 days</div>`)[0];
+                popup_4888763c822cf6e83ec18950753e6530.setContent(html_d83171715578afc21a01736902b8ba13);
+            
+        
+
+        circle_marker_f21bce1c382f58caaadea654d913b57f.bindPopup(popup_4888763c822cf6e83ec18950753e6530)
+        ;
+
+        
+    
+    
+            var circle_marker_cfc253eb2cf9f5fc57db5cd330d007da = L.circleMarker(
+                [30.494068, 76.254493],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_c683f2fab49293c5c68768aa452251e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a57f0057383714a506286a18ba6cdfda = $(`<div id="html_a57f0057383714a506286a18ba6cdfda" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_035_PART3<br><b>Pickup:</b> 2000 kg<br><b>Arrival:</b> 711 min<br><b>Waiting:</b> 9 days</div>`)[0];
+                popup_c683f2fab49293c5c68768aa452251e6.setContent(html_a57f0057383714a506286a18ba6cdfda);
+            
+        
+
+        circle_marker_cfc253eb2cf9f5fc57db5cd330d007da.bindPopup(popup_c683f2fab49293c5c68768aa452251e6)
+        ;
+
+        
+    
+    
+            var poly_line_622531e9b7b386f6e117e16f136b8255 = L.polyline(
+                [[30.900965, 75.857277], [30.616786, 75.980167], [30.416422, 76.285596], [30.444366, 76.28192], [30.494068, 76.254493], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_171972a27ff99ced1208256b036b5903 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0eb166927e95bcbc1b52def54d2dddd7 = $(`<div id="html_0eb166927e95bcbc1b52def54d2dddd7" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #10<br><b>Truck:</b> 8<br><b>Priority:</b> 13.0 Days Max Wait</div>`)[0];
+                popup_171972a27ff99ced1208256b036b5903.setContent(html_0eb166927e95bcbc1b52def54d2dddd7);
+            
+        
+
+        poly_line_622531e9b7b386f6e117e16f136b8255.bindPopup(popup_171972a27ff99ced1208256b036b5903)
+        ;
+
+        
+    
+    
+            var circle_marker_57dbfea6e7b17c9f135781019395e62e = L.circleMarker(
+                [30.817604, 75.93844],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_70e178739edf26bc8a45ee8e609232b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a6e4fb0e34ac188e88cb518d004e6bf = $(`<div id="html_3a6e4fb0e34ac188e88cb518d004e6bf" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_095_PART3<br><b>Pickup:</b> 2600 kg<br><b>Arrival:</b> 420 min<br><b>Waiting:</b> 10 days</div>`)[0];
+                popup_70e178739edf26bc8a45ee8e609232b8.setContent(html_3a6e4fb0e34ac188e88cb518d004e6bf);
+            
+        
+
+        circle_marker_57dbfea6e7b17c9f135781019395e62e.bindPopup(popup_70e178739edf26bc8a45ee8e609232b8)
+        ;
+
+        
+    
+    
+            var circle_marker_6e7c249c9ffeef52bc6e7951c5270370 = L.circleMarker(
+                [30.799786, 75.790798],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_355af0921759085df72500ca7012e760 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_543a668ea1b8e5f2b25955c5b63a0945 = $(`<div id="html_543a668ea1b8e5f2b25955c5b63a0945" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_056_PART2<br><b>Pickup:</b> 12300 kg<br><b>Arrival:</b> 474 min<br><b>Waiting:</b> 5 days</div>`)[0];
+                popup_355af0921759085df72500ca7012e760.setContent(html_543a668ea1b8e5f2b25955c5b63a0945);
+            
+        
+
+        circle_marker_6e7c249c9ffeef52bc6e7951c5270370.bindPopup(popup_355af0921759085df72500ca7012e760)
+        ;
+
+        
+    
+    
+            var poly_line_a4ea8d0f2ec82f7ab6bc0650afbd7ec5 = L.polyline(
+                [[30.900965, 75.857277], [30.817604, 75.93844], [30.799786, 75.790798], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_c9ccc7450a3ba34fdc9535212cfa47a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26c5678d9c9cbb098e05a29c381f164d = $(`<div id="html_26c5678d9c9cbb098e05a29c381f164d" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #11<br><b>Truck:</b> 0<br><b>Priority:</b> 10.0 Days Max Wait</div>`)[0];
+                popup_c9ccc7450a3ba34fdc9535212cfa47a3.setContent(html_26c5678d9c9cbb098e05a29c381f164d);
+            
+        
+
+        poly_line_a4ea8d0f2ec82f7ab6bc0650afbd7ec5.bindPopup(popup_c9ccc7450a3ba34fdc9535212cfa47a3)
+        ;
+
+        
+    
+    
+            var circle_marker_b7e4ec54e714790c10b9a4f9f0d13195 = L.circleMarker(
+                [30.925721, 75.789222],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_2873d9b587255c914f0d5f2e1ef80161 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91128e0c9db397c2fc29ff5448c4c41d = $(`<div id="html_91128e0c9db397c2fc29ff5448c4c41d" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_004<br><b>Pickup:</b> 13700 kg<br><b>Arrival:</b> 540 min<br><b>Waiting:</b> 10 days</div>`)[0];
+                popup_2873d9b587255c914f0d5f2e1ef80161.setContent(html_91128e0c9db397c2fc29ff5448c4c41d);
+            
+        
+
+        circle_marker_b7e4ec54e714790c10b9a4f9f0d13195.bindPopup(popup_2873d9b587255c914f0d5f2e1ef80161)
+        ;
+
+        
+    
+    
+            var poly_line_dca53de3d79ff83669ed1b9594b289cb = L.polyline(
+                [[30.900965, 75.857277], [30.925721, 75.789222], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_5374c3496c111a3fd997a5c1c3886ff1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ed575894d833bd17df08900c506e3b6 = $(`<div id="html_3ed575894d833bd17df08900c506e3b6" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #12<br><b>Truck:</b> 3<br><b>Priority:</b> 10.0 Days Max Wait</div>`)[0];
+                popup_5374c3496c111a3fd997a5c1c3886ff1.setContent(html_3ed575894d833bd17df08900c506e3b6);
+            
+        
+
+        poly_line_dca53de3d79ff83669ed1b9594b289cb.bindPopup(popup_5374c3496c111a3fd997a5c1c3886ff1)
+        ;
+
+        
+    
+    
+            var circle_marker_ac7a61b701bcc189d77d0bdfd21474a9 = L.circleMarker(
+                [30.9319, 75.80506],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_99ec54e5d9e9080796c075c92caccd76 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc803aa3b7fadc67dce99bd836cfc3cf = $(`<div id="html_fc803aa3b7fadc67dce99bd836cfc3cf" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_028_PART2<br><b>Pickup:</b> 6600 kg<br><b>Arrival:</b> 480 min<br><b>Waiting:</b> 4 days</div>`)[0];
+                popup_99ec54e5d9e9080796c075c92caccd76.setContent(html_fc803aa3b7fadc67dce99bd836cfc3cf);
+            
+        
+
+        circle_marker_ac7a61b701bcc189d77d0bdfd21474a9.bindPopup(popup_99ec54e5d9e9080796c075c92caccd76)
+        ;
+
+        
+    
+    
+            var circle_marker_e841ea8ad796ebfc21c1b763db58bf49 = L.circleMarker(
+                [31.044253, 75.81553],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_d43586f6b8ea7976679af34068fb4df2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c9683e01b623c8025add01ce658ad10 = $(`<div id="html_7c9683e01b623c8025add01ce658ad10" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_066_PART2<br><b>Pickup:</b> 6400 kg<br><b>Arrival:</b> 540 min<br><b>Waiting:</b> 5 days</div>`)[0];
+                popup_d43586f6b8ea7976679af34068fb4df2.setContent(html_7c9683e01b623c8025add01ce658ad10);
+            
+        
+
+        circle_marker_e841ea8ad796ebfc21c1b763db58bf49.bindPopup(popup_d43586f6b8ea7976679af34068fb4df2)
+        ;
+
+        
+    
+    
+            var poly_line_28ee5b1af6215da77d99f5984b18ada6 = L.polyline(
+                [[30.900965, 75.857277], [30.9319, 75.80506], [31.044253, 75.81553], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_3d160959fd7df66589b13b4241d7b239 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5eb0e2b673ef0a573974aa9518699b75 = $(`<div id="html_5eb0e2b673ef0a573974aa9518699b75" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #13<br><b>Truck:</b> 14<br><b>Priority:</b> 5.0 Days Max Wait</div>`)[0];
+                popup_3d160959fd7df66589b13b4241d7b239.setContent(html_5eb0e2b673ef0a573974aa9518699b75);
+            
+        
+
+        poly_line_28ee5b1af6215da77d99f5984b18ada6.bindPopup(popup_3d160959fd7df66589b13b4241d7b239)
+        ;
+
+        
+    
+    
+            var circle_marker_35e69aaad75c773545b65f8f9f88f6ad = L.circleMarker(
+                [31.012479, 75.438871],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkpurple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_e1d74e289d40cb26cade552f28d0ff42 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e5c49b978bbd498bc1001a00504b4ad = $(`<div id="html_6e5c49b978bbd498bc1001a00504b4ad" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_049<br><b>Pickup:</b> 5200 kg<br><b>Arrival:</b> 600 min<br><b>Waiting:</b> 4 days</div>`)[0];
+                popup_e1d74e289d40cb26cade552f28d0ff42.setContent(html_6e5c49b978bbd498bc1001a00504b4ad);
+            
+        
+
+        circle_marker_35e69aaad75c773545b65f8f9f88f6ad.bindPopup(popup_e1d74e289d40cb26cade552f28d0ff42)
+        ;
+
+        
+    
+    
+            var circle_marker_ff4ab384cc097fd7f8ac20b36dda0303 = L.circleMarker(
+                [31.003747, 75.628235],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkpurple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_c943dbcdc5b521a01ac29a25f8616ace = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5fba2bc5287064dc14cdb222796296d = $(`<div id="html_b5fba2bc5287064dc14cdb222796296d" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_094<br><b>Pickup:</b> 9000 kg<br><b>Arrival:</b> 663 min<br><b>Waiting:</b> 3 days</div>`)[0];
+                popup_c943dbcdc5b521a01ac29a25f8616ace.setContent(html_b5fba2bc5287064dc14cdb222796296d);
+            
+        
+
+        circle_marker_ff4ab384cc097fd7f8ac20b36dda0303.bindPopup(popup_c943dbcdc5b521a01ac29a25f8616ace)
+        ;
+
+        
+    
+    
+            var poly_line_43004a5f35e951efa714d8e227c42da7 = L.polyline(
+                [[30.900965, 75.857277], [31.012479, 75.438871], [31.003747, 75.628235], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkpurple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_eb279aa75f0e1ebd5126a0dbea6938ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_645f71f68b442ad5bef9d64bc5711817 = $(`<div id="html_645f71f68b442ad5bef9d64bc5711817" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #14<br><b>Truck:</b> 7<br><b>Priority:</b> 4.0 Days Max Wait</div>`)[0];
+                popup_eb279aa75f0e1ebd5126a0dbea6938ff.setContent(html_645f71f68b442ad5bef9d64bc5711817);
+            
+        
+
+        poly_line_43004a5f35e951efa714d8e227c42da7.bindPopup(popup_eb279aa75f0e1ebd5126a0dbea6938ff)
+        ;
+
+        
+    
+    
+            var circle_marker_5d57acca20d51a17c308909004133634 = L.circleMarker(
+                [30.9319, 75.80506],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_dabdc121371e367e36c82b73f59cd9f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6b04193a3ef601f43d794dfcc4ccd9a = $(`<div id="html_d6b04193a3ef601f43d794dfcc4ccd9a" style="width: 100.0%; height: 100.0%;"><b>Farm:</b> FARM_028_PART1<br><b>Pickup:</b> 15000 kg<br><b>Arrival:</b> 480 min<br><b>Waiting:</b> 4 days</div>`)[0];
+                popup_dabdc121371e367e36c82b73f59cd9f1.setContent(html_d6b04193a3ef601f43d794dfcc4ccd9a);
+            
+        
+
+        circle_marker_5d57acca20d51a17c308909004133634.bindPopup(popup_dabdc121371e367e36c82b73f59cd9f1)
+        ;
+
+        
+    
+    
+            var poly_line_ca4e6fd07d52031b72687414271150c5 = L.polyline(
+                [[30.900965, 75.857277], [30.9319, 75.80506], [30.900965, 75.857277]],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightgray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_9059fd92bd6e1e01d35a3c1b63f7e0fc);
+        
+    
+        var popup_9f0cce35a35a072a19af4c19b67a14f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_235d6160650e8a12a401316f4276ecc8 = $(`<div id="html_235d6160650e8a12a401316f4276ecc8" style="width: 100.0%; height: 100.0%;"><b>Dispatch Order:</b> #15<br><b>Truck:</b> 13<br><b>Priority:</b> 4.0 Days Max Wait</div>`)[0];
+                popup_9f0cce35a35a072a19af4c19b67a14f9.setContent(html_235d6160650e8a12a401316f4276ecc8);
+            
+        
+
+        poly_line_ca4e6fd07d52031b72687414271150c5.bindPopup(popup_9f0cce35a35a072a19af4c19b67a14f9)
+        ;
+
+        
+    
+</script>
+</html>

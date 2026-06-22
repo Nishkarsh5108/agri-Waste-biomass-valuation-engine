@@ -1,0 +1,515 @@
+[
+  {
+    "truck_id": 0,
+    "total_load_kg": 14900,
+    "total_time_min": 134,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 311
+      },
+      {
+        "node_index": 142,
+        "node_id": "FARM_095_PART3",
+        "load_kg": 2600,
+        "arrival_min": 420
+      },
+      {
+        "node_index": 72,
+        "node_id": "FARM_056_PART2",
+        "load_kg": 12300,
+        "arrival_min": 474
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 505
+      }
+    ]
+  },
+  {
+    "truck_id": 1,
+    "total_load_kg": 14200,
+    "total_time_min": 430,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 310
+      },
+      {
+        "node_index": 14,
+        "node_id": "FARM_012_PART2",
+        "load_kg": 700,
+        "arrival_min": 487
+      },
+      {
+        "node_index": 128,
+        "node_id": "FARM_087",
+        "load_kg": 5400,
+        "arrival_min": 600
+      },
+      {
+        "node_index": 23,
+        "node_id": "FARM_020_PART2",
+        "load_kg": 8000,
+        "arrival_min": 627
+      },
+      {
+        "node_index": 93,
+        "node_id": "FARM_068_PART2",
+        "load_kg": 100,
+        "arrival_min": 734
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 860
+      }
+    ]
+  },
+  {
+    "truck_id": 2,
+    "total_load_kg": 14100,
+    "total_time_min": 456,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 314
+      },
+      {
+        "node_index": 107,
+        "node_id": "FARM_075_PART2",
+        "load_kg": 600,
+        "arrival_min": 540
+      },
+      {
+        "node_index": 99,
+        "node_id": "FARM_071_PART2",
+        "load_kg": 2700,
+        "arrival_min": 628
+      },
+      {
+        "node_index": 133,
+        "node_id": "FARM_089_PART2",
+        "load_kg": 8900,
+        "arrival_min": 654
+      },
+      {
+        "node_index": 105,
+        "node_id": "FARM_074_PART3",
+        "load_kg": 1900,
+        "arrival_min": 734
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 830
+      }
+    ]
+  },
+  {
+    "truck_id": 3,
+    "total_load_kg": 13700,
+    "total_time_min": 54,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 443
+      },
+      {
+        "node_index": 4,
+        "node_id": "FARM_004",
+        "load_kg": 13700,
+        "arrival_min": 540
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 557
+      }
+    ]
+  },
+  {
+    "truck_id": 4,
+    "total_load_kg": 13200,
+    "total_time_min": 62,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 439
+      },
+      {
+        "node_index": 145,
+        "node_id": "FARM_098",
+        "load_kg": 13200,
+        "arrival_min": 540
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 561
+      }
+    ]
+  },
+  {
+    "truck_id": 5,
+    "total_load_kg": 14500,
+    "total_time_min": 363,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 175
+      },
+      {
+        "node_index": 20,
+        "node_id": "FARM_018_PART2",
+        "load_kg": 3200,
+        "arrival_min": 360
+      },
+      {
+        "node_index": 42,
+        "node_id": "FARM_033_PART3",
+        "load_kg": 2700,
+        "arrival_min": 480
+      },
+      {
+        "node_index": 29,
+        "node_id": "FARM_024",
+        "load_kg": 8600,
+        "arrival_min": 532
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 599
+      }
+    ]
+  },
+  {
+    "truck_id": 6,
+    "total_load_kg": 14500,
+    "total_time_min": 420,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 241
+      },
+      {
+        "node_index": 83,
+        "node_id": "FARM_062_PART2",
+        "load_kg": 400,
+        "arrival_min": 420
+      },
+      {
+        "node_index": 115,
+        "node_id": "FARM_080_PART2",
+        "load_kg": 2800,
+        "arrival_min": 469
+      },
+      {
+        "node_index": 127,
+        "node_id": "FARM_086_PART2",
+        "load_kg": 1200,
+        "arrival_min": 570
+      },
+      {
+        "node_index": 12,
+        "node_id": "FARM_011",
+        "load_kg": 7700,
+        "arrival_min": 600
+      },
+      {
+        "node_index": 148,
+        "node_id": "FARM_099_PART3",
+        "load_kg": 2400,
+        "arrival_min": 663
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 721
+      }
+    ]
+  },
+  {
+    "truck_id": 7,
+    "total_load_kg": 14200,
+    "total_time_min": 242,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 420
+      },
+      {
+        "node_index": 60,
+        "node_id": "FARM_049",
+        "load_kg": 5200,
+        "arrival_min": 600
+      },
+      {
+        "node_index": 139,
+        "node_id": "FARM_094",
+        "load_kg": 9000,
+        "arrival_min": 663
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 722
+      }
+    ]
+  },
+  {
+    "truck_id": 8,
+    "total_load_kg": 15000,
+    "total_time_min": 414,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 379
+      },
+      {
+        "node_index": 67,
+        "node_id": "FARM_054",
+        "load_kg": 7600,
+        "arrival_min": 540
+      },
+      {
+        "node_index": 55,
+        "node_id": "FARM_044_PART2",
+        "load_kg": 2800,
+        "arrival_min": 648
+      },
+      {
+        "node_index": 131,
+        "node_id": "FARM_088_PART3",
+        "load_kg": 2600,
+        "arrival_min": 676
+      },
+      {
+        "node_index": 47,
+        "node_id": "FARM_035_PART3",
+        "load_kg": 2000,
+        "arrival_min": 711
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 853
+      }
+    ]
+  },
+  {
+    "truck_id": 9,
+    "total_load_kg": 15000,
+    "total_time_min": 70,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 255
+      },
+      {
+        "node_index": 63,
+        "node_id": "FARM_051_PART1",
+        "load_kg": 15000,
+        "arrival_min": 360
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 385
+      }
+    ]
+  },
+  {
+    "truck_id": 10,
+    "total_load_kg": 12600,
+    "total_time_min": 225,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 410
+      },
+      {
+        "node_index": 66,
+        "node_id": "FARM_052_PART2",
+        "load_kg": 7700,
+        "arrival_min": 540
+      },
+      {
+        "node_index": 10,
+        "node_id": "FARM_008_PART2",
+        "load_kg": 4900,
+        "arrival_min": 607
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 695
+      }
+    ]
+  },
+  {
+    "truck_id": 11,
+    "total_load_kg": 14400,
+    "total_time_min": 247,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 472
+      },
+      {
+        "node_index": 21,
+        "node_id": "FARM_019",
+        "load_kg": 9200,
+        "arrival_min": 600
+      },
+      {
+        "node_index": 119,
+        "node_id": "FARM_082_PART3",
+        "load_kg": 3400,
+        "arrival_min": 678
+      },
+      {
+        "node_index": 144,
+        "node_id": "FARM_097_PART2",
+        "load_kg": 1800,
+        "arrival_min": 713
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 779
+      }
+    ]
+  },
+  {
+    "truck_id": 12,
+    "total_load_kg": 13400,
+    "total_time_min": 212,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 337
+      },
+      {
+        "node_index": 70,
+        "node_id": "FARM_055_PART3",
+        "load_kg": 4300,
+        "arrival_min": 480
+      },
+      {
+        "node_index": 97,
+        "node_id": "FARM_070_PART3",
+        "load_kg": 1300,
+        "arrival_min": 527
+      },
+      {
+        "node_index": 51,
+        "node_id": "FARM_040",
+        "load_kg": 7800,
+        "arrival_min": 600
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 645
+      }
+    ]
+  },
+  {
+    "truck_id": 13,
+    "total_load_kg": 15000,
+    "total_time_min": 50,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 385
+      },
+      {
+        "node_index": 32,
+        "node_id": "FARM_028_PART1",
+        "load_kg": 15000,
+        "arrival_min": 480
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 495
+      }
+    ]
+  },
+  {
+    "truck_id": 14,
+    "total_load_kg": 13000,
+    "total_time_min": 124,
+    "stops": [
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 385
+      },
+      {
+        "node_index": 33,
+        "node_id": "FARM_028_PART2",
+        "load_kg": 6600,
+        "arrival_min": 480
+      },
+      {
+        "node_index": 90,
+        "node_id": "FARM_066_PART2",
+        "load_kg": 6400,
+        "arrival_min": 540
+      },
+      {
+        "node_index": 0,
+        "node_id": "DEPOT",
+        "load_kg": 0,
+        "arrival_min": 579
+      }
+    ]
+  }
+]

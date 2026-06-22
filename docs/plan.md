@@ -23,3 +23,13 @@ feed that historical NDVI curve into a LSTM or XGboost pipeline which predicts w
 #### Agricultural Belts:
 
 for geting the agricultural belts automatically we need the region polygons to feed into GEE, so we will use India's open sourced dataset for the region polygons districtwise in the GeoJSON format, since stubble burning is more prominant in the north india, we will focus on the two major states : Punjab and Haryana.
+
+
+
+
+
+we can estimate the final price of the stubble on farmer's device using the density genreated by Manya's CV model, and use satellite data (NDVI) to roughly estimate the stubble health, to produce final density
+we would ask the farmer for land area
+then the app would give an estimate amount of money the farmer would get
+
+the final amount which farmer gets would be calculated by the factory where it would be processed

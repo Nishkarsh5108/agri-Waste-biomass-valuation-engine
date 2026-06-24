@@ -13,3 +13,22 @@ models/xgboost_aft_harvest.json
 models/xgboost_aft_metrics.json
 src/satellite_data/using_presto
 src/satellite_data/ml_stuff/catboost_info
+docs/walkthroughs/logistics.pdf
+docs/walkthroughs/Satellite_ML_model.pdf
+backend/.env
+
+# Python / Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.venv/
+env/
+.env
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store

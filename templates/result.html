@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Biomass Dashboard</title>
+    <style>
+        /* Modern Dark Tech Theme */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #0d1117; 
+            color: #c9d1d9; 
+            text-align: center; 
+            margin: 0; 
+            padding: 40px 20px; 
+        }
+        h1 { color: #58a6ff; font-weight: 600; letter-spacing: 1px; }
+        
+        .container { 
+            max-width: 1000px; 
+            margin: auto; 
+        }
+        
+        /* Image Display Section */
+        .image-container { 
+            display: flex; 
+            justify-content: space-around; 
+            margin-top: 30px; 
+            flex-wrap: wrap;
+        }
+        .image-box {
+            background-color: #161b22;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+        .image-box img { 
+            max-width: 380px; 
+            border-radius: 8px; 
+        }
+        .image-box h3 { color: #8b949e; margin-top: 0; font-size: 1em; text-transform: uppercase; }
+
+        /* Tech Dashboard Data Box */
+        .data-grid { 
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .metric-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+        .metric-card:hover { transform: translateY(-5px); border-color: #58a6ff; }
+        .metric-card h4 { margin: 0 0 10px 0; color: #8b949e; text-transform: uppercase; font-size: 0.85em; letter-spacing: 1px; }
+        
+        .highlight-red { color: #ff7b72; font-size: 2em; font-weight: bold; margin: 0; }
+        .highlight-green { color: #3fb950; font-size: 2em; font-weight: bold; margin: 0; }
+        .highlight-blue { color: #58a6ff; font-size: 2em; font-weight: bold; margin: 0; }
+
+        .btn { 
+            display: inline-block; 
+            margin-top: 40px; 
+            padding: 12px 30px; 
+            background-color: #238636; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            font-size: 1.1em;
+            transition: background-color 0.2s;
+        }
+        .btn:hover { background-color: #2ea043; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>[ SYSTEM: ACTIVE ] Biomass Analysis Engine</h1>
+
+        <div class="image-container">
+            <div class="image-box">
+                <h3>Raw Satellite Input</h3>
+                <img src="{{ url_for('static', filename='uploads/' + original_img) }}" alt="Original Crop">
+            </div>
+            <div class="image-box">
+                <h3>YOLOv8 Feature Map</h3>
+                <img src="{{ url_for('static', filename='uploads/' + result_img) }}" alt="Processed Crop">
+            </div>
+        </div>
+
+        <div class="data-grid">
+            <div class="metric-card">
+                <h4>Detected Density</h4>
+                <p class="highlight-red">{{ density }}%</p>
+                <p style="font-size: 0.9em; color: #8b949e;">Items Found: {{ count }}</p>
+            </div>
+            
+            <div class="metric-card">
+                <h4>Financial Valuation</h4>
+                <p class="highlight-green">{{ payout }}</p>
+                <p style="font-size: 0.9em; color: #8b949e;">Payload: {{ weight }} Tons</p>
+            </div>
+            
+            <div class="metric-card">
+                <h4>Carbon Prevented</h4>
+                <p class="highlight-blue">{{ co2_saved }}</p>
+                <p style="font-size: 0.9em; color: #8b949e;">Greenhouse Gas Neutralized</p>
+            </div>
+        </div>
+
+        <a href="/" class="btn">Process New Coordinates</a>
+    </div>
+
+</body>
+</html>

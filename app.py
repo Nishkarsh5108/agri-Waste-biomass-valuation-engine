@@ -7,7 +7,6 @@ from ultralytics import YOLO
 app = Flask(__name__)
 model = YOLO('models/best.pt')
 
-# Folder setting jahan images save hongi
 UPLOAD_FOLDER = 'static/uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -20,7 +19,7 @@ def home():
 # 3. Detection, Valuation & Environmental Route
 @app.route('/detect', methods=['POST'])
 def detect_weeds():
-    # Photo receive karna
+    # To recieve the uploaded image from the form
     if 'crop_image' not in request.files:
         return "No file uploaded!"
     
@@ -28,7 +27,7 @@ def detect_weeds():
     if file.filename == '':
         return "No file selected!"
 
-    # Kisaan se Farm Area lena (Default 1.0 Hectare)
+    # to handle farm area input, defaulting to 1.0 if not provided or invalid
     try:
         farm_area = float(request.form.get('farm_area', 1.0))
     except ValueError:
@@ -38,31 +37,25 @@ def detect_weeds():
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
     file.save(filepath)
 
-    # ========================================================
     # AI Magic (YOLOv8 Run) - UPGRADED TO HD VISION
-    # ========================================================
-    # CRITICAL CHANGE: imgsz=1024 aur conf=0.10 set kiya gaya hai for background detection
     results = model.predict(source=filepath, save=False, conf=0.25, imgsz=1024)  # Calibration factor for gaps and sky compensation
     result = results[0]
 
-    # Weed/Stubble Count calculate karna
+    # Weed/Stubble Count 
     weed_count = len(result.boxes)
 
-    # Total image area calculate karna
+    # Total image area
     img_height, img_width = result.orig_shape
     total_image_area = img_height * img_width
     
     total_biomass_area = 0
-    # Har bounding box ka area calculate karke add karna
     for box in result.boxes:
         width = float(box.xywh[0][2])
         height = float(box.xywh[0][3])
         total_biomass_area += (width * height)
         
-    # ========================================================
     # Density Percentage (With Calibration Factor)
-    # ========================================================
-    calibration_factor = 10  # Gaps aur aasmaan ko compensate karne ke liye
+    calibration_factor = 10
     if total_image_area > 0:
         adjusted_area = total_biomass_area * calibration_factor
         density_ratio = min(adjusted_area / total_image_area, 1.0) # Cap at 100%
@@ -87,12 +80,9 @@ def detect_weeds():
     # 3. Carbon Credit Math (1 Ton = 1500 Kg CO2)
     co2_saved_kg = actual_weight_tons * 1500
     co2_formatted = f"{int(co2_saved_kg):,} Kg"
-    # ------------------------------------
 
-    # ========================================================
     # API CALL TO FASTAPI
-    # ========================================================
-    # This points to the teammate's logistics module running locally.
+    # This points to the logistics module running locally.
     fastapi_url = "http://127.0.0.1:8000/logistics/dispatch" 
     
     payload_data = {
@@ -110,14 +100,11 @@ def detect_weeds():
             print(f"⚠️ Backend returned an error: {response.status_code} - {response.text}")
     except requests.exceptions.RequestException as e:
         print(f"⚠️ FastAPI backend is currently offline... Error: {e}")
-    # ========================================================
-
-    # Result wali nayi image ko save karna
+    
     output_filename = "result_" + file.filename
     output_path = os.path.join(app.config['UPLOAD_FOLDER'], output_filename)
     result.save(filename=output_path)
 
-    # User ko naya Result page dikhana
     return render_template('result.html', 
                            original_img=file.filename, 
                            result_img=output_filename, 

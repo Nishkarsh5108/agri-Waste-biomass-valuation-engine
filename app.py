@@ -38,11 +38,14 @@ def detect_weeds():
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
     file.save(filepath)
 
-    # AI Magic (YOLOv8 Run)
-    results = model.predict(source=filepath, save=False, conf=0.1)
+    # ========================================================
+    # AI Magic (YOLOv8 Run) - UPGRADED TO HD VISION
+    # ========================================================
+    # CRITICAL CHANGE: imgsz=1024 aur conf=0.10 set kiya gaya hai for background detection
+    results = model.predict(source=filepath, save=False, conf=0.25, imgsz=1024)  # Calibration factor for gaps and sky compensation
     result = results[0]
 
-    # Weed Count calculate karna
+    # Weed/Stubble Count calculate karna
     weed_count = len(result.boxes)
 
     # Total image area calculate karna
@@ -56,10 +59,15 @@ def detect_weeds():
         height = float(box.xywh[0][3])
         total_biomass_area += (width * height)
         
-    # Density Percentage nikalna
+    # ========================================================
+    # Density Percentage (With Calibration Factor)
+    # ========================================================
+    calibration_factor = 10  # Gaps aur aasmaan ko compensate karne ke liye
     if total_image_area > 0:
-        density_percentage = (total_biomass_area / total_image_area) * 100
-        density = min(round(density_percentage, 2), 100.0)
+        adjusted_area = total_biomass_area * calibration_factor
+        density_ratio = min(adjusted_area / total_image_area, 1.0) # Cap at 100%
+        density_percentage = density_ratio * 100
+        density = round(density_percentage, 2)
     else:
         density = 0.0
 

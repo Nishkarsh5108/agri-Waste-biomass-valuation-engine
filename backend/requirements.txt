@@ -12,3 +12,8 @@ supabase==2.31.0
 websockets>=14,<16
 passlib[bcrypt]==1.7.4
 python-jose[cryptography]==3.3.0
+ultralytics
+opencv-python-headless
+Pillow
+pandas
+torch

@@ -15,6 +15,7 @@ from app.core.database import Base
 from app.modules.auth.models import User
 from app.modules.farmers.models import Farm
 from app.modules.listings.models import BiomassListing
+from app.modules.logistics.models import LogisticsRoute
 
 config = context.config
 

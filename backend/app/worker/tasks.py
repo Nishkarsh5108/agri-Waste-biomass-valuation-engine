@@ -47,7 +47,8 @@ def process_cv_density(listing_id: int):
 def predict_harvest_dates():
     pass
 
+from app.worker.logistics_optimizer import run_logistics_optimization_async
+
 @celery_app.task
 def run_logistics_optimization():
-    pass
-
+    asyncio.run(run_logistics_optimization_async())

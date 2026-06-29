@@ -18,3 +18,4 @@ opencv-python-headless
 Pillow
 pandas
 torch
+ortools

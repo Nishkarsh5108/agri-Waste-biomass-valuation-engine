@@ -45,7 +45,7 @@ def analyze_biomass_image(image_bytes: bytes, farm_area: float = 1.0) -> dict:
         height = float(box.xywh[0][3])
         total_biomass_area += (width * height)
         
-    calibration_factor = 10
+    calibration_factor = 1.2
     if total_image_area > 0:
         adjusted_area = total_biomass_area * calibration_factor
         density_ratio = min(adjusted_area / total_image_area, 1.0)

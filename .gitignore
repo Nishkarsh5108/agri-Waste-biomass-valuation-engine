@@ -16,6 +16,8 @@ src/satellite_data/ml_stuff/catboost_info
 docs/walkthroughs/logistics.pdf
 docs/walkthroughs/Satellite_ML_model.pdf
 backend/.env
+docs/bs.md
+docs/bs_main.md
 
 # Python / Backend
 __pycache__/
@@ -32,3 +34,4 @@ env/
 .idea/
 *.swp
 .DS_Store
+data/Stubble

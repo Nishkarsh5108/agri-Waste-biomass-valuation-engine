@@ -8,8 +8,15 @@ from app.modules.listings.models import BiomassListing, ListingStatus
 from app.modules.farmers.models import Farm
 from app.modules.ml_inference.service import analyze_biomass_image
 
+from app.core.config import settings
+from sqlalchemy.pool import NullPool
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+
 async def _process_cv_density_async(listing_id: int):
-    async with AsyncSessionLocal() as db:
+    engine = create_async_engine(settings.DATABASE_URL, echo=False, poolclass=NullPool)
+    async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+    
+    async with async_session() as db:
         # 1. Fetch listing
         result = await db.execute(select(BiomassListing).where(BiomassListing.id == listing_id))
         listing = result.scalars().first()
@@ -23,9 +30,14 @@ async def _process_cv_density_async(listing_id: int):
             return
             
         # 3. Download image bytes
-        req = urllib.request.Request(listing.photo_s3_url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req) as response:
-            image_bytes = response.read()
+        try:
+            req = urllib.request.Request(listing.photo_s3_url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req) as response:
+                image_bytes = response.read()
+        except urllib.error.URLError as e:
+            print(f"Failed to download image from {listing.photo_s3_url}: {e}")
+            # Keep as PROCESSING or just skip updating status, but don't crash
+            return
             
         # 4. Run YOLO Inference
         analysis_results = analyze_biomass_image(image_bytes, farm.area_hectares)
@@ -38,6 +50,7 @@ async def _process_cv_density_async(listing_id: int):
         listing.status = ListingStatus.READY
         
         await db.commit()
+    await engine.dispose()
 
 @celery_app.task
 def process_cv_density(listing_id: int):

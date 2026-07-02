@@ -2,6 +2,7 @@ import math
 from sqlalchemy.future import select
 from sqlalchemy import func
 from app.core.database import AsyncSessionLocal
+import app.modules.auth.models
 from app.modules.listings.models import BiomassListing, ListingStatus
 from app.modules.farmers.models import Farm
 from app.modules.logistics.models import LogisticsRoute
@@ -21,7 +22,7 @@ def haversine(lat1, lon1, lat2, lon2):
 
 async def run_logistics_optimization_async():
     async with AsyncSessionLocal() as db:
-        # Fetch all READY listings with their coordinates
+        # Fetch all valid listings with their coordinates
         query = (
             select(
                 BiomassListing,
@@ -29,15 +30,33 @@ async def run_logistics_optimization_async():
                 func.ST_Y(func.ST_Centroid(Farm.geom)).label("lat")
             )
             .join(Farm, BiomassListing.farm_id == Farm.id)
-            .where(BiomassListing.status == ListingStatus.READY)
-            # Limit to 50 for quick hackathon optimization, else ortools takes too long
-            .limit(50)
+            .where(
+                BiomassListing.status.in_([ListingStatus.READY, ListingStatus.ROUTED]),
+                BiomassListing.cv_density_ratio.is_not(None)
+            )
         )
         result = await db.execute(query)
         rows = result.all()
         
         if not rows:
             return
+            
+        # Spatial density clustering: find the seed farm that has the smallest distance to its 49th closest neighbor
+        if len(rows) > 50:
+            best_cluster = rows[:50]
+            min_radius = float('inf')
+            for i, center_row in enumerate(rows):
+                dists = []
+                for j, target_row in enumerate(rows):
+                    d = haversine(center_row.lat, center_row.lon, target_row.lat, target_row.lon)
+                    dists.append((d, target_row))
+                dists.sort(key=lambda x: x[0])
+                candidate_cluster = [r for _, r in dists[:50]]
+                radius = dists[49][0] if len(dists) >= 50 else dists[-1][0]
+                if radius < min_radius:
+                    min_radius = radius
+                    best_cluster = candidate_cluster
+            rows = best_cluster
             
         # Node 0: Depot (Let's place it at the first farm's location + offset)
         depot_lat = rows[0].lat + 0.01
@@ -51,7 +70,8 @@ async def run_logistics_optimization_async():
             listing = row.BiomassListing
             node_idx = i + 1
             locations.append((row.lat, row.lon))
-            demands.append(int(listing.estimated_tonnage))
+            # Scale by 100 for OR-Tools integer solver precision (e.g., 0.76t -> 76)
+            demands.append(int(round(float(listing.estimated_tonnage) * 100)))
             listing_map[node_idx] = listing
             
         # Distance Matrix
@@ -64,9 +84,9 @@ async def run_logistics_optimization_async():
                 row.append(dist)
             distance_matrix.append(row)
             
-        # Vehicle setup
+        # Vehicle setup (1500 = 15.00 tons scaled by 100)
         total_demand = sum(demands)
-        vehicle_capacity = 100 # tons
+        vehicle_capacity = 1500
         num_vehicles = max(1, (total_demand // vehicle_capacity) + 2)
         vehicle_capacities = [vehicle_capacity] * num_vehicles
         
@@ -117,7 +137,7 @@ async def run_logistics_optimization_async():
                         "listing_id": listing.id,
                         "lat": locations[node_index][0],
                         "lon": locations[node_index][1],
-                        "demand": demands[node_index]
+                        "demand": round(float(listing.estimated_tonnage), 2)
                     })
                     routed_listing_ids.append(listing.id)
                 index = solution.Value(routing.NextVar(index))

@@ -1,8 +1,12 @@
 import os
 import io
 import math
-from PIL import Image
-from ultralytics import YOLO
+try:
+    from PIL import Image
+    from ultralytics import YOLO
+    ML_AVAILABLE = True
+except ImportError:
+    ML_AVAILABLE = False
 
 # Resolve the absolute path to the backend directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -24,6 +28,9 @@ def analyze_biomass_image(image_bytes: bytes, farm_area: float = 1.0) -> dict:
     """
     Analyzes a farm image to estimate biomass weight and valuation.
     """
+    if not ML_AVAILABLE:
+        raise RuntimeError("ML libraries are not installed. Using mock data.")
+        
     # 1. Load image
     image = Image.open(io.BytesIO(image_bytes))
     

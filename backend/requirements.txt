@@ -13,9 +13,10 @@ websockets>=14,<16
 passlib==1.7.4
 bcrypt==4.0.1
 python-jose[cryptography]==3.3.0
-ultralytics
-opencv-python-headless
-Pillow
-pandas
-torch
+# Heavy ML libraries commented out for Render Free Tier:
+# ultralytics
+# opencv-python-headless
+# Pillow
+# pandas
+# torch
 ortools

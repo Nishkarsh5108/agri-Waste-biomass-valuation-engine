@@ -8,9 +8,7 @@ celery_app = Celery(
     include=["app.worker.tasks"]
 )
 
-celery_app.conf.task_routes = {
-    "app.worker.tasks.*": "main-queue"
-}
+# Removed custom task routing so tasks fall back to default 'celery' queue
 
 # Optional: Configuration for Celery Beat (Scheduled Tasks)
 celery_app.conf.beat_schedule = {

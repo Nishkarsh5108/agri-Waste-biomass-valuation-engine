@@ -35,3 +35,4 @@ env/
 *.swp
 .DS_Store
 data/Stubble
+node_modules/

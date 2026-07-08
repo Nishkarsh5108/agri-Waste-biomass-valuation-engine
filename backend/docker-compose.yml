@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   api:
     build: .
@@ -7,10 +5,11 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
+    env_file:         # <-- ADD THIS LINE
+      - .env          # <-- ADD THIS LINE
     environment:
       - ENVIRONMENT=local
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-
   # NOTE: Local Redis is optional. 
   # Upstash Redis is used in config.py, but for completely offline local dev, uncomment below:
   # redis:

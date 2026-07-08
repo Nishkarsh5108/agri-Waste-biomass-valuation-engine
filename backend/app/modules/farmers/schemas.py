@@ -6,6 +6,10 @@ class FarmCreate(BaseModel):
     area_hectares: float
     geojson_polygon: Dict[str, Any]  # GeoJSON object
 
+class FarmUpdate(BaseModel):
+    name: Optional[str] = None
+    area_hectares: Optional[float] = None
+
 class FarmOut(BaseModel):
     id: int
     user_id: int
